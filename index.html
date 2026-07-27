@@ -10,9 +10,14 @@
 
     <main>
         <header>
-            <img src="assets/logo.png" alt="Aqua Spatial Logo" id="logo">
-            <h1>AquaSpatial</h1>
-        </header>
+			<picture>
+				<!-- Serves the square logo on screens 480px wide or smaller -->
+				<source media="(max-width: 480px)" srcset="assets/logo-square.png">
+				<!-- Default wide logo for desktop -->
+				<img src="assets/logo.png" alt="AquaSpatial Logo" id="logo">
+			</picture>
+			<h1>Aqua Spatial</h1>
+		</header>
 
         <section id="about">
             <p>We check, validate and produce analytical insights from wastewater data to streamline the design of new assets.</p>
