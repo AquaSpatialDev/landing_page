@@ -29,7 +29,7 @@ main {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
-/* 4. Logo Sizing */
+/* 4. Desktop Logo Sizing */
 #logo {
     max-width: 240px;
     height: auto;
@@ -95,4 +95,18 @@ footer {
     border-top: 1px solid #f1f5f9;
     font-size: 0.8rem;
     color: #94a3b8;
+}
+
+/* 7. Mobile Viewport Overrides (Must remain at the bottom to maintain CSS cascade priority) */
+@media (max-width: 480px) {
+    main {
+        padding: 1.5rem;
+    }
+
+    #logo {
+        max-width: 80px;
+        max-height: 80px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
