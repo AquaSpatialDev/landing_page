@@ -1,95 +1,2024 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Microcycle product overview and interactive technical explorer.">
-<title>Microcycle | Precision filtration, clearly engineered</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browser CAD</title>
 <style>
-:root{--navy:#050548;--navy2:#09095f;--cream:#f5efdf;--ink:#11131a;--muted:#646874;--line:#dee1e8;--paper:#f7f7f5;--white:#fff;--focus:#efd889;--radius:26px;--shadow:0 24px 70px rgba(8,9,39,.14)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--white);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.5}body.menu-open{overflow:hidden}
-a{color:inherit}img{max-width:200%;display:block}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}.eyebrow{font-size:.73rem;letter-spacing:.16em;text-transform:uppercase;font-weight:750}.section{padding:110px 0}.section-title{font-size:clamp(2.2rem,5vw,5.2rem);line-height:.97;letter-spacing:-.055em;margin:.3em 0}.section-copy{max-width:680px;color:var(--muted);font-size:1.08rem}.skip{position:fixed;left:12px;top:-60px;z-index:1000;background:#fff;padding:12px 16px;border-radius:10px}.skip:focus{top:12px}
-header{height:74px;position:fixed;inset:0 0 auto;z-index:100;background:rgba(255,255,255,.78);backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.06)}nav{height:100%;display:flex;align-items:center;justify-content:space-between}.mark{display:flex;align-items:center;text-decoration:none;height:100%;flex-shrink:0}.header-logo{display:block;width:auto;height:48px;max-width:220px;object-fit:contain;object-position:left center;border-radius:0}.navlinks{display:flex;align-items:center;gap:28px}.navlinks a{text-decoration:none;font-size:.9rem;font-weight:650}.nav-cta,.btn{border:0;cursor:pointer;border-radius:999px;padding:12px 18px;background:var(--navy);color:white;text-decoration:none;font-weight:750;display:inline-flex;align-items:center;justify-content:center;gap:8px}.menu{display:none;background:none;border:0;font-size:1.5rem}
-.hero{min-height:100svh;padding-top:74px;display:grid;align-items:center;overflow:hidden;background:radial-gradient(circle at 73% 44%,#fff 0 14%,#f1f2f4 46%,#fff 72%)}.hero-grid{display:grid;grid-template-columns:.82fr 1.18fr;align-items:center;min-height:calc(100svh - 74px)}.hero h1{font-size:clamp(3.7rem,7.8vw,8rem);line-height:.86;letter-spacing:-.072em;margin:22px 0}.hero p{max-width:520px;color:var(--muted);font-size:1.15rem}.hero-actions{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}.btn.secondary{background:white;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}.hero-visual{position:relative;height:min(79vh,820px);display:grid;place-items:center}.hero-visual img{width:min(800px,115%);mix-blend-mode:multiply;filter:drop-shadow(0 32px 25px rgba(8,9,35,.17));transform:translate(3%,3%);transition:transform .2s ease-out}.hero-note{position:absolute;right:0;bottom:9%;background:rgba(255,255,255,.82);backdrop-filter:blur(15px);padding:14px 18px;border:1px solid rgba(0,0,0,.07);border-radius:14px;font-size:.78rem;color:var(--muted)}
-.intro{background:var(--navy);color:white}.intro .section-copy{color:#c4c5dc}.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:66px;background:rgba(255,255,255,.16)}.fact{background:var(--navy);padding:30px}.fact strong{display:block;font-size:1.35rem}.fact span{display:block;color:#b9bad2;margin-top:8px;font-size:.93rem}
-.product-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}.product-shot{background:#f4f4f4;border-radius:var(--radius);overflow:hidden;min-height:660px;display:grid;place-items:center}.product-shot img{width:106%;mix-blend-mode:multiply;transition:transform .5s}.product-shot:hover img{transform:scale(1.025)}.feature-list{margin-top:40px}.feature{padding:22px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:34px 1fr;gap:14px}.feature b{font-size:1.15rem}.feature p{margin:6px 0;color:var(--muted)}.feature-num{color:var(--navy);font-weight:800}
-.explorer{background:#0c0d12;color:white}.explorer-head{display:flex;justify-content:space-between;gap:30px;align-items:end}.explorer-head .section-copy{color:#acafba}.explorer-grid{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(300px,.55fr);gap:22px;margin-top:52px}.stage{position:relative;min-height:710px;border-radius:var(--radius);overflow:hidden;background:white;display:grid;place-items:center;isolation:isolate}.stage-scene{position:absolute;inset:0;display:grid;place-items:center;transform-origin:center center;transition:transform .7s cubic-bezier(.2,.8,.2,1);will-change:transform}.stage-scene img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;pointer-events:none}.stage.exploded .stage-scene{transform:scale(1.06) rotate(-1deg)}
-.explorer-badge{position:absolute;top:18px;left:18px;z-index:20;display:flex;align-items:center;gap:8px;background:rgba(5,5,72,.92);color:#fff;padding:10px 16px;border:1px solid rgba(255,255,255,.14);border-radius:999px;box-shadow:0 8px 24px rgba(5,5,72,.18);font-size:.8rem;font-weight:750;letter-spacing:.02em;pointer-events:none;backdrop-filter:blur(10px)}
-@keyframes hotspotPulse{0%{box-shadow:0 0 0 7px rgba(5,5,72,.16),0 6px 18px rgba(5,5,72,.16)}70%{box-shadow:0 0 0 18px rgba(5,5,72,0),0 6px 18px rgba(5,5,72,.16)}100%{box-shadow:0 0 0 7px rgba(5,5,72,0),0 6px 18px rgba(5,5,72,.16)}}
-.hotspot{position:absolute;z-index:15;width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.9);background:var(--navy);color:#fff;font-weight:800;cursor:pointer;animation:hotspotPulse 2.5s infinite;transition:transform .2s,background .2s,color .2s,outline-color .2s}.hotspot:nth-of-type(2){animation-delay:.25s}.hotspot:nth-of-type(3){animation-delay:.5s}.hotspot:nth-of-type(4){animation-delay:.75s}.hotspot:nth-of-type(5){animation-delay:1s}.hotspot:hover,.hotspot:focus-visible,.hotspot.active{transform:scale(1.15);background:var(--cream);color:var(--navy);outline:3px solid var(--focus);outline-offset:3px}.hotspot.active{animation:none;box-shadow:0 0 0 8px rgba(239,216,137,.2),0 8px 24px rgba(5,5,72,.22)}.h1{left:69%;top:20%}.h2{left:58%;top:36%}.h3{left:48%;top:52%}.h4{left:31%;top:67%}
-.info{background:#181a21;border:1px solid #2b2d36;border-radius:var(--radius);padding:30px;display:flex;flex-direction:column}.info-label{color:#9da0aa;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase}.info h3{font-size:2rem;letter-spacing:-.04em;margin:12px 0}.info p{color:#b9bbc4}.data{margin-top:26px}.data-row{padding:16px 0;border-top:1px solid #30323b}.data-row span{display:block;color:#868a94;font-size:.75rem;text-transform:uppercase;letter-spacing:.09em}.data-row b{display:block;margin-top:5px}.explore-controls{display:flex;gap:10px;margin-top:auto;padding-top:25px}.control{flex:1;padding:12px;border:1px solid #383b46;background:transparent;color:white;border-radius:99px;cursor:pointer}.control:hover,.control:focus-visible{background:white;color:#111}
-.install{background:var(--paper)}.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:55px}.step{background:white;border:1px solid var(--line);border-radius:20px;padding:28px;min-height:245px}.step-no{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:white;font-weight:800}.step h3{font-size:1.35rem;margin-top:45px}.step p{color:var(--muted)}
-.faqs{max-width:840px}.faq{border-top:1px solid var(--line)}.faq button{width:100%;border:0;background:none;padding:24px 0;display:flex;justify-content:space-between;text-align:left;font:inherit;font-weight:750;font-size:1.08rem;cursor:pointer}.answer{display:grid;grid-template-rows:0fr;transition:.3s}.answer>div{overflow:hidden;color:var(--muted)}.faq.open .answer{grid-template-rows:1fr}.faq.open .answer>div{padding-bottom:24px}.plus{transition:.2s}.faq.open .plus{transform:rotate(45deg)}
-.cta{padding:100px 0}.cta-box{background:var(--navy);border-radius:32px;padding:clamp(38px,7vw,88px);color:white;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:end}.cta h2{font-size:clamp(2.6rem,6vw,5.5rem);line-height:.93;letter-spacing:-.055em;margin:0}.cta p{color:#c3c4d8;max-width:600px}.cta .btn{background:var(--cream);color:var(--navy)}
-footer{border-top:1px solid var(--line);padding:30px 0}.footer-row{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:.83rem}.disclosure{font-size:.75rem;color:#8b8e97;max-width:720px}.reveal{opacity:0;transform:translateY(25px);transition:.7s}.reveal.in{opacity:1;transform:none}
-@media(max-width:900px){.hero-grid,.product-grid,.explorer-grid{grid-template-columns:1fr}.hero-copy{padding-top:70px}.hero-visual{height:55vh}.hero-visual img{width:92%;transform:none}.hero-note{right:12px}.facts,.steps{grid-template-columns:1fr}.fact{padding-left:0}.explorer-head{display:block}.stage{min-height:570px}.cta-box{grid-template-columns:1fr}.navlinks{position:fixed;inset:74px 0 0;background:white;display:none;flex-direction:column;padding:45px;font-size:1.3rem}.menu{display:block}.menu-open .navlinks{display:flex}}
-@media(max-width:600px){.header-logo{height:42px;max-width:170px}.wrap{width:min(100% - 24px,1180px)}.section{padding:78px 0}.hero h1{font-size:3.9rem}.hero-visual{height:48vh}.product-shot{min-height:470px}.stage{min-height:430px}.explorer-badge{top:12px;left:12px;padding:8px 12px;font-size:.7rem}.hotspot{width:34px;height:34px}.h1{left:72%;top:20%}.h2{left:59%;top:36%}.h3{left:47%;top:50%}.h4{left:28%;top:66%}.explore-controls{flex-direction:column}.footer-row{display:block}.cta{padding:60px 0}}
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+  :root {
+    --bg-dark: #1e1e2e;
+    --bg-panel: #2a2a3c;
+    --bg-toolbar: #32324a;
+    --bg-input: #1a1a28;
+    --text-primary: #e0e0f0;
+    --text-secondary: #a0a0c0;
+    --accent: #6c8cff;
+    --accent-hover: #5a7aff;
+    --border: #3a3a50;
+    --danger: #ff6c6c;
+    --success: #6cff9c;
+    --warning: #ffc86c;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Toolbar */
+  .toolbar {
+    background: var(--bg-toolbar);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 100;
+    flex-shrink: 0;
+  }
+
+  .toolbar-group {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0 8px;
+    border-right: 1px solid var(--border);
+  }
+
+  .toolbar-group:last-child { border-right: none; }
+
+  .tool-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--text-secondary);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+  }
+
+  .tool-btn:hover {
+    background: rgba(108, 140, 255, 0.15);
+    color: var(--text-primary);
+  }
+
+  .tool-btn.active {
+    background: rgba(108, 140, 255, 0.25);
+    color: var(--accent);
+    border-color: var(--accent);
+  }
+
+  .tool-btn svg { width: 18px; height: 18px; }
+
+  .tool-btn.danger:hover {
+    background: rgba(255, 108, 108, 0.2);
+    color: var(--danger);
+  }
+
+  /* Main Content */
+  .main-content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+
+  /* Canvas Area */
+  .canvas-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-dark);
+  }
+
+  #cad-canvas {
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+  }
+
+  #cad-canvas.tool-select { cursor: default; }
+  #cad-canvas.tool-select canvas-selected { cursor: move; }
+
+  /* SVG Styles */
+  .grid-line { stroke: #2a2a40; stroke-width: 0.5; }
+  .grid-line-major { stroke: #3a3a55; stroke-width: 0.8; }
+  .shape { fill-opacity: 0.3; stroke-width: 2; cursor: move; }
+  .shape:hover { stroke-width: 3; }
+  .shape.selected { stroke: var(--accent); stroke-width: 2.5; fill-opacity: 0.4; }
+
+  .resize-handle {
+    fill: var(--accent);
+    stroke: var(--bg-dark);
+    stroke-width: 2;
+    cursor: nwse-resize;
+  }
+
+  .resize-handle:hover { fill: var(--accent-hover); }
+
+  .temp-shape { fill-opacity: 0.15; stroke-width: 2; stroke-dasharray: 5 5; }
+
+  /* Zoom/Pan Info */
+  .view-info {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: var(--bg-panel);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+    display: flex;
+    gap: 12px;
+  }
+
+  .view-info span { display: flex; align-items: center; gap: 4px; }
+
+  /* Zoom Controls */
+  .zoom-controls {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .zoom-btn {
+    width: 36px;
+    height: 36px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-primary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: all 0.15s;
+  }
+
+  .zoom-btn:hover {
+    background: var(--bg-toolbar);
+    border-color: var(--accent);
+  }
+
+  /* Property Panel */
+  .property-panel {
+    width: 280px;
+    background: var(--bg-panel);
+    border-left: 1px solid var(--border);
+    overflow-y: auto;
+    flex-shrink: 0;
+  }
+
+  .panel-header {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .panel-section {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .panel-section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .property-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .property-row:last-child { margin-bottom: 0; }
+
+  .property-label {
+    font-size: 12px;
+    color: var(--text-secondary);
+    min-width: 60px;
+  }
+
+  .property-input {
+    flex: 1;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--text-primary);
+    padding: 6px 8px;
+    font-size: 12px;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .property-input:focus { border-color: var(--accent); }
+
+  .color-input {
+    width: 40px;
+    height: 28px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg-input);
+    cursor: pointer;
+    padding: 2px;
+  }
+
+  .no-selection {
+    padding: 24px 16px;
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+  }
+
+  .no-selection svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+  }
+
+  /* Shape count badge */
+  .shape-count {
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 10px;
+  }
+
+  /* Context Menu */
+  .context-menu {
+    position: fixed;
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 4px;
+    z-index: 1000;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    display: none;
+  }
+
+  .context-menu.visible { display: block; }
+
+  .context-menu-item {
+    padding: 8px 16px;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .context-menu-item:hover {
+    background: rgba(108, 140, 255, 0.15);
+  }
+
+  .context-menu-item.danger { color: var(--danger); }
+  .context-menu-item.danger:hover { background: rgba(255, 108, 108, 0.15); }
+
+  .context-menu-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 0;
+  }
+
+  /* Keyboard shortcut hints */
+  .shortcut {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-left: auto;
+    padding: 2px 6px;
+    background: var(--bg-input);
+    border-radius: 3px;
+  }
+
+  /* Tooltip */
+  .tooltip {
+    position: fixed;
+    background: var(--bg-toolbar);
+    color: var(--text-primary);
+    padding: 6px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 1000;
+    display: none;
+  }
+
+  /* Import/Export Modal */
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 2000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal-overlay.visible { display: flex; }
+
+  .modal {
+    background: var(--bg-panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    width: 500px;
+    max-height: 80vh;
+    overflow: hidden;
+  }
+
+  .modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .modal-header h3 { font-size: 16px; }
+
+  .modal-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 20px;
+    padding: 4px;
+  }
+
+  .modal-body { padding: 20px; }
+
+  .modal-textarea {
+    width: 100%;
+    min-height: 200px;
+    background: var(--bg-input);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-primary);
+    padding: 12px;
+    font-family: monospace;
+    font-size: 12px;
+    resize: vertical;
+  }
+
+  .modal-actions {
+    padding: 12px 20px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+  }
+
+  .modal-btn {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg-input);
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 13px;
+  }
+
+  .modal-btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .modal-btn:hover { opacity: 0.9; }
+
+  /* Status bar */
+  .status-bar {
+    background: var(--bg-toolbar);
+    border-top: 1px solid var(--border);
+    padding: 4px 16px;
+    font-size: 11px;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text-secondary); }
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to content</a>
-<header><nav class="wrap" aria-label="Primary navigation">
-<a class="mark" href="#top" aria-label="Microcycle home"><img class="header-logo" src="full_size_logo.png" alt="Microcycle"></a>
-<button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
-<div class="navlinks"><a href="#product">Product</a><a href="#explorer">Explorer</a><a href="#installation">Installation</a><a href="#faq">FAQ</a><a class="nav-cta" href="#contact">Enquire</a></div>
-</nav></header>
-<main id="main">
-<section class="hero" id="top"><div class="wrap hero-grid">
-<div class="hero-copy reveal"><div class="eyebrow">Microcycle filtration</div><h1>Microcycle One.<br></h1><p>Stainless steel body and filter, with a carbon core to improve taste.</p><div class="hero-actions"><a class="btn" href="#explorer">Explore the Assembly ↓</a><a class="btn secondary" href="#product">View Product</a></div></div>
-<div class="hero-visual"><img src="brand view zoom.png" alt="Front view of the assembled Microcycle cylindrical metal filter housing with two inline threaded connections." decoding="async"><div class="hero-note">Product image supplied by Microcycle</div></div>
-</div></section>
-<section class="section intro"><div class="wrap reveal"><div class="eyebrow">Product reading</div><h2 class="section-title">A bespoke serviceable architecture.</h2><p class="section-copy">Full stainless steel construction gives Microcycle One unparalleled longevity. Each filter provides a year of continual filtration, removing particles and improving taste.</p><div class="facts"><div class="fact"><strong>Inlet &amp; Outlet</strong><span>Microcycle utilises Ridgeline® hoses without rubber inner tubes.</span></div><div class="fact"><strong>Filter Element</strong><span>A two stage element made of steel and carbon, without binders, fillers or resins.</span></div><div class="fact"><strong>Metal Housing</strong><span>Brushed stainless steel, dependable construction.</span></div></div></div></section>
-<section class="section" id="product"><div class="wrap product-grid"><div class="product-shot reveal"><img src="brand view.jpg" alt="Complete Microcycle filter housing in a brushed metallic finish." loading="lazy"></div><div class="reveal"><div class="eyebrow">Product architecture</div><h2 class="section-title">Designed around the flow path.</h2><p class="section-copy">No loss of flow, even after extended use. Keep enjoying better water.</p><div class="feature-list"><div class="feature"><span class="feature-num">01</span><div><b>Flow Rate</b><p>Up to 30 litres per minute.</p></div></div><div class="feature"><span class="feature-num">02</span><div><b>Dirt Holding Capacity</b><p>Up to 130 grams.</p></div></div><div class="feature"><span class="feature-num">03</span><div><b>Form Factor</b><p>Fits under any standard kitchen sink.</p></div></div></div></div></div></section>
-<section class="section explorer" id="explorer"><div class="wrap"><div class="explorer-head reveal"><div><div class="eyebrow">Interactive Product Explorer</div><h2 class="section-title">Inspect every component in detail.</h2></div><p class="section-copy">Click any highlighted component to zoom into the assembly, inspect material specifications and understand how each part contributes to filtration performance.</p></div>
-<div class="explorer-grid reveal"><div class="stage exploded" id="stage">
-<div class="explorer-badge" aria-hidden="true"><span>⌕</span><span>Click components to inspect</span></div>
-<div class="stage-scene" id="stageScene">
-<img src="exploded view.png" alt="Exploded view showing the filter head, circular retaining component, pleated element and cylindrical bowl separated along a diagonal axis." loading="lazy">
-<button class="hotspot h1 active" data-part="head" aria-label="Select and zoom into filter head" aria-pressed="true">1</button><button class="hotspot h2" data-part="ring" aria-label="Select and zoom into carbon core" aria-pressed="false">2</button><button class="hotspot h3" data-part="element" aria-label="Select and zoom into pleated filter element" aria-pressed="false">3</button><button class="hotspot h4" data-part="bowl" aria-label="Select and zoom into outer housing" aria-pressed="false">4</button>
-</div></div>
-<aside class="info" aria-live="polite"><span class="info-label">Selected component</span><h3 id="partTitle">Inline Head</h3><p id="partDesc">Directs water flow down into the filter element, and back out once cleaned.</p><div class="data"><div class="data-row"><span>Material</span><b id="partMaterial">Stainless Steel</b></div><div class="data-row"><span>Specification</span><b id="partPurpose">Up to 30 litres per minute inflow and outflow</b></div><div class="data-row"><span>Other materials</span><b id="partMaintenance">WRAS approved non-shedding EPDM O-rings. Prevent water leakage.</b></div></div><div class="explore-controls"><button class="control" id="toggleView" type="button">Assemble view</button><button class="control" id="resetView" type="button">Reset explorer</button></div></aside></div></div></section>
-<section class="section install" id="installation"><div class="wrap reveal"><div class="eyebrow">Installation &amp; maintenance</div><h2 class="section-title">Our options.</h2><p class="section-copy">We offer a range of install options to suit your bespoke requirements.</p><div class="steps"><article class="step"><span class="step-no">1</span><h3>Self Install</h3><p>Verify compatibility, choose your configuration, install at home.</p></article><article class="step"><span class="step-no">2</span><h3>Verified Installers</h3><p>Don't want to install yourself? We can connect you with a professional who will fit Microcycle One at your convenience.</p></article><article class="step"><span class="step-no">3</span><h3>Annual Service</h3><p>Annual service, your way. Select self service or managed.</p></article></div></div></section>
-<section class="section" id="faq"><div class="wrap faqs reveal"><div class="eyebrow">Frequently asked questions</div><h2 class="section-title">Known. Unknown. Clear.</h2><div class="faq open"><button aria-expanded="true">How does the annual service work?<span class="plus">＋</span></button><div class="answer"><div>Sign up on checkout, you don't need to do anything, we will arrange your replacement filter every year.</div></div></div><div class="faq"><button aria-expanded="false">What material is the product made from?<span class="plus">＋</span></button><div class="answer"><div>Our filter elements are made from 316L marine grade stainless steel, the housing is made from 304L stainless steel and the carbon is organic coconut based GAC. Our seals are bespoke and made by WRAS approved manufacturers from non-shedding EPDM.</div></div></div><div class="faq"><button aria-expanded="false">What are the dimensions and operating limits?<span class="plus">＋</span></button><div class="answer"><div>The unit is 330mm tall by 120mm wide. Its maximum operating pressure is 150 psi.</div></div></div><div class="faq"><button aria-expanded="false">How is the filter element replaced?<span class="plus">＋</span></button><div class="answer"><div>The outer housing is used to transport new filters too. Simply screw off your outer housing and swap for the new one. The old one is sent back to us, regenerated and reused.</div></div></div></div></section>
-<section class="cta" id="contact"><div class="wrap"><div class="cta-box reveal"><div><div class="eyebrow">For customers, installers and distributors</div><h2>Start with the right specification.</h2><p>Request verified dimensions, connection details, operating parameters and installation documentation.</p></div><a class="btn" href="#faq">Review required data →</a></div></div></section>
-</main>
-<footer><div class="wrap footer-row"><div style="display:grid;grid-template-columns:70px 1fr;gap:16px;align-items:start"><img src="full_size_logo.png" alt="Microcycle logo" style="width:70px;height:70px;object-fit:cover;border-radius:0"><div><b>MICROCYCLE</b><p class="disclosure">Concept product site.</p></div></div><div>© <span id="year"></span> Microcycle</div></div></footer>
+
+<!-- Toolbar -->
+<div class="toolbar">
+  <div class="toolbar-group">
+    <button class="tool-btn active" id="tool-select" title="Select (V)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+      </svg>
+      Select
+      <span class="shortcut">V</span>
+    </button>
+    <button class="tool-btn" id="tool-rectangle" title="Rectangle (R)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="18" height="18" rx="2"/>
+      </svg>
+      Rectangle
+      <span class="shortcut">R</span>
+    </button>
+    <button class="tool-btn" id="tool-circle" title="Circle (C)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="9"/>
+      </svg>
+      Circle
+      <span class="shortcut">C</span>
+    </button>
+    <button class="tool-btn" id="tool-line" title="Line (L)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="4" y1="20" x2="20" y2="4"/>
+      </svg>
+      Line
+      <span class="shortcut">L</span>
+    </button>
+  </div>
+
+  <div class="toolbar-group">
+    <button class="tool-btn" id="btn-undo" title="Undo (Ctrl+Z)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 10h10a5 5 0 0 1 5 5v2a5 5 0 0 1-5 5H8M3 10l4-4M3 10l4 4"/>
+      </svg>
+      Undo
+    </button>
+    <button class="tool-btn" id="btn-redo" title="Redo (Ctrl+Shift+Z)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 10H11a5 5 0 0 0-5 5v2a5 5 0 0 0 5 5h5M21 10l-4-4M21 10l-4 4"/>
+      </svg>
+      Redo
+    </button>
+  </div>
+
+  <div class="toolbar-group">
+    <button class="tool-btn" id="btn-delete" title="Delete Selected (Del)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+      </svg>
+      Delete
+      <span class="shortcut">Del</span>
+    </button>
+    <button class="tool-btn danger" id="btn-clear" title="Clear All">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+      Clear
+    </button>
+  </div>
+
+  <div class="toolbar-group">
+    <button class="tool-btn" id="btn-export" title="Export SVG">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+      </svg>
+      Export
+    </button>
+    <button class="tool-btn" id="btn-import" title="Import SVG">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+      </svg>
+      Import
+    </button>
+  </div>
+
+  <div class="toolbar-group">
+    <button class="tool-btn" id="btn-grid" title="Toggle Grid (G)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 3h18v18H3zM3 9h18M3 15h18M9 3v18M15 3v18"/>
+      </svg>
+      Grid
+      <span class="shortcut">G</span>
+    </button>
+    <button class="tool-btn" id="btn-snap" title="Toggle Snap (S)">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M12 2v4M12 18v4M2 12h4M18 12h4"/>
+      </svg>
+      Snap
+      <span class="shortcut">S</span>
+    </button>
+  </div>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+  <!-- Canvas -->
+  <div class="canvas-container" id="canvas-container">
+    <svg id="cad-canvas" class="tool-select">
+      <defs>
+        <pattern id="grid-small" width="10" height="10" patternUnits="userSpaceOnUse">
+          <path d="M 10 0 L 0 0 0 10" fill="none" stroke="#2a2a40" stroke-width="0.5"/>
+        </pattern>
+        <pattern id="grid-large" width="100" height="100" patternUnits="userSpaceOnUse">
+          <rect width="100" height="100" fill="url(#grid-small)"/>
+          <path d="M 100 0 L 0 0 0 100" fill="none" stroke="#3a3a55" stroke-width="0.8"/>
+        </pattern>
+      </defs>
+      <g id="viewport">
+        <rect id="grid-rect" width="10000" height="10000" x="-5000" y="-5000" fill="url(#grid-large)"/>
+        <g id="shapes-group"></g>
+        <g id="temp-group"></g>
+        <g id="selection-group"></g>
+      </g>
+    </svg>
+
+    <!-- View Info -->
+    <div class="view-info">
+      <span id="zoom-display">100%</span>
+      <span id="cursor-pos">0, 0</span>
+      <span id="shape-count">0 shapes</span>
+    </div>
+
+    <!-- Zoom Controls -->
+    <div class="zoom-controls">
+      <button class="zoom-btn" id="zoom-in" title="Zoom In (+)">+</button>
+      <button class="zoom-btn" id="zoom-reset" title="Reset View (0)">⌂</button>
+      <button class="zoom-btn" id="zoom-out" title="Zoom Out (-)">−</button>
+    </div>
+  </div>
+
+  <!-- Property Panel -->
+  <div class="property-panel" id="property-panel">
+    <div class="panel-header">
+      Properties
+      <span class="shape-count" id="selection-count">0 selected</span>
+    </div>
+    <div id="properties-content">
+      <div class="no-selection">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+        </svg>
+        <p>Select shapes to edit their properties</p>
+        <p style="margin-top: 8px; font-size: 11px;">Use V to switch to select tool</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Status Bar -->
+<div class="status-bar">
+  <span id="status-left">Ready</span>
+  <span id="status-right">Grid: 10px | Snap: On</span>
+</div>
+
+<!-- Context Menu -->
+<div class="context-menu" id="context-menu">
+  <div class="context-menu-item" id="ctx-copy">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    Copy
+  </div>
+  <div class="context-menu-item" id="ctx-paste">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1"/></svg>
+    Paste
+  </div>
+  <div class="context-menu-divider"></div>
+  <div class="context-menu-item danger" id="ctx-delete">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
+    Delete
+  </div>
+</div>
+
+<!-- Import/Export Modal -->
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modal-title">Export SVG</h3>
+      <button class="modal-close" id="modal-close">×</button>
+    </div>
+    <div class="modal-body">
+      <textarea class="modal-textarea" id="modal-textarea" readonly></textarea>
+    </div>
+    <div class="modal-actions" id="modal-actions">
+      <button class="modal-btn" id="modal-copy">Copy to Clipboard</button>
+      <button class="modal-btn primary" id="modal-download">Download SVG</button>
+    </div>
+  </div>
+</div>
+
+<!-- Hidden file input for import -->
+<input type="file" id="file-input" accept=".svg,.xml" style="display: none;">
+
 <script>
-const parts={
-head:{title:'Inline Head',desc:'Directs water flow down into the filter element, and back out once cleaned.',material:'Stainless Steel',purpose:'Up to 30 litres per minute inflow and outflow.',maintenance:'WRAS approved non-shedding EPDM O-rings. Prevent water leakage.'},
-ring:{title:'Carbon Core',desc:'Circular carbon core to improve taste by removing chlorine and dissolved organic matter.',material:'Granular Activated Carbon (GAC)',purpose:'Coconut shell sourced, WRAS approved GAC.',maintenance:'Stainless steel mesh containment.'},
-element:{title:'Pleated Filter Element',desc:'Cylindrical pleated outer particulate filter.',material:'Stainless Steel',purpose:'Filters particulates down to 1 μm.',maintenance:'WRAS approved non-shedding EPDM gaskets. Prevent water bypass.'},
-bowl:{title:'Outer Housing',desc:'The base of the filter unit, contains the water and filtration media.',material:'Stainless Steel',purpose:'Pressure rated to 150 psi.',maintenance:'None.'}
+// ============================================
+// STATE MANAGEMENT
+// ============================================
+
+const State = {
+  shapes: [],
+  selectedIds: new Set(),
+  currentTool: 'select',
+  viewState: { panX: 0, panY: 0, zoom: 1 },
+  history: [],
+  historyIndex: -1,
+  gridSize: 10,
+  gridEnabled: true,
+  snapEnabled: true,
+  isDrawing: false,
+  isDragging: false,
+  isResizing: false,
+  isPanning: false,
+  dragStart: { x: 0, y: 0 },
+  resizeHandle: null,
+  resizeStartBounds: null,
+  tempShape: null,
+  clipboard: [],
+  nextId: 1,
+  panStart: null,
+  panStartView: null
 };
-const title=document.querySelector('#partTitle'),desc=document.querySelector('#partDesc'),mat=document.querySelector('#partMaterial'),purpose=document.querySelector('#partPurpose'),maint=document.querySelector('#partMaintenance');
-const stage=document.querySelector('#stage'),stageScene=document.querySelector('#stageScene'),toggle=document.querySelector('#toggleView'),resetButton=document.querySelector('#resetView'),hotspots=document.querySelectorAll('.hotspot');
-let selectedPart='head',isComponentZoomed=false;
-function showOverview(){isComponentZoomed=false;stageScene.style.transform=stage.classList.contains('exploded')?'scale(1.06) rotate(-1deg)':'scale(1) rotate(0deg)';}
-function zoomTo(part){
-const button=document.querySelector(`.hotspot[data-part="${part}"]`);if(!button)return;
-/* Measure from the unzoomed overview so repeated clicks do not compound the offset. */
-stageScene.style.transform=stage.classList.contains('exploded')?'scale(1.06) rotate(-1deg)':'scale(1) rotate(0deg)';
-requestAnimationFrame(()=>{
-const stageRect=stage.getBoundingClientRect(),buttonRect=button.getBoundingClientRect();
-const buttonCentreX=buttonRect.left+buttonRect.width/2,buttonCentreY=buttonRect.top+buttonRect.height/2;
-const targetX=stageRect.left+stageRect.width/2,targetY=stageRect.top+stageRect.height*.46;
-const zoom=innerWidth<=600?1.28:1.42;
-/* Divide by zoom because translation is applied within the transformed coordinate system. */
-const moveX=(targetX-buttonCentreX)/zoom,moveY=(targetY-buttonCentreY)/zoom;
-stageScene.style.transform=`translate(${moveX}px,${moveY}px) scale(${zoom})`;
-isComponentZoomed=true;
-});
+
+// ============================================
+// UTILITY FUNCTIONS
+// ============================================
+
+function generateId() {
+  return 'shape-' + State.nextId++;
 }
-function choose(key,shouldZoom=true){const p=parts[key];if(!p)return;selectedPart=key;title.textContent=p.title;desc.textContent=p.desc;mat.textContent=p.material;purpose.textContent=p.purpose;maint.textContent=p.maintenance;hotspots.forEach(b=>{const active=b.dataset.part===key;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active));});if(shouldZoom){stage.classList.add('exploded');toggle.textContent='Assemble view';zoomTo(key);}}
-hotspots.forEach(b=>b.addEventListener('click',()=>choose(b.dataset.part,true)));
-toggle.addEventListener('click',()=>{stage.classList.toggle('exploded');toggle.textContent=stage.classList.contains('exploded')?'Assemble view':'Explode view';showOverview();});
-resetButton.addEventListener('click',()=>{stage.classList.add('exploded');toggle.textContent='Assemble view';choose('head',false);showOverview();});
-window.addEventListener('resize',()=>{if(isComponentZoomed)zoomTo(selectedPart);});
-document.querySelectorAll('.faq button').forEach(btn=>btn.addEventListener('click',()=>{const f=btn.parentElement,open=f.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));}));
-const menu=document.querySelector('.menu');menu.addEventListener('click',()=>{document.body.classList.toggle('menu-open');const o=document.body.classList.contains('menu-open');menu.setAttribute('aria-expanded',String(o));menu.textContent=o?'×':'☰';});document.querySelectorAll('.navlinks a').forEach(a=>a.addEventListener('click',()=>{document.body.classList.remove('menu-open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';}));
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));
-const heroImg=document.querySelector('.hero-visual img');if(!matchMedia('(prefers-reduced-motion: reduce)').matches)window.addEventListener('mousemove',e=>{if(innerWidth>900){const x=(e.clientX/innerWidth-.5)*10,y=(e.clientY/innerHeight-.5)*8;heroImg.style.transform=`translate(${3+x/10}%,${3+y/10}%) rotateY(${x/3}deg) rotateX(${-y/3}deg)`;}});
-choose('head',false);showOverview();document.querySelector('#year').textContent=new Date().getFullYear();
+
+function screenToSvg(clientX, clientY) {
+  const svg = document.getElementById('cad-canvas');
+  const rect = svg.getBoundingClientRect();
+  const x = (clientX - rect.left - State.viewState.panX) / State.viewState.zoom;
+  const y = (clientY - rect.top - State.viewState.panY) / State.viewState.zoom;
+  return { x, y };
+}
+
+function snapToGrid(value) {
+  if (!State.snapEnabled) return value;
+  return Math.round(value / State.gridSize) * State.gridSize;
+}
+
+function clamp(value, min, max) {
+  return Math.max(min, Math.min(max, value));
+}
+
+function shapeToSVGElement(shape) {
+  const el = document.createElementNS('http://www.w3.org/2000/svg', shape.type === 'rectangle' ? 'rect' : shape.type === 'circle' ? 'circle' : 'line');
+  el.setAttribute('id', shape.id);
+  el.setAttribute('class', 'shape' + (State.selectedIds.has(shape.id) ? ' selected' : ''));
+
+  if (shape.type === 'rectangle') {
+    el.setAttribute('x', shape.x);
+    el.setAttribute('y', shape.y);
+    el.setAttribute('width', Math.abs(shape.width));
+    el.setAttribute('height', Math.abs(shape.height));
+    el.setAttribute('rx', shape.rx || 0);
+    el.setAttribute('fill', shape.fill || '#6c8cff');
+    el.setAttribute('stroke', shape.stroke || '#4a6aff');
+  } else if (shape.type === 'circle') {
+    el.setAttribute('cx', shape.cx);
+    el.setAttribute('cy', shape.cy);
+    el.setAttribute('r', Math.abs(shape.r));
+    el.setAttribute('fill', shape.fill || '#6cff9c');
+    el.setAttribute('stroke', shape.stroke || '#4aff6c');
+  } else if (shape.type === 'line') {
+    el.setAttribute('x1', shape.x1);
+    el.setAttribute('y1', shape.y1);
+    el.setAttribute('x2', shape.x2);
+    el.setAttribute('y2', shape.y2);
+    el.setAttribute('stroke', shape.stroke || '#ffc86c');
+    el.setAttribute('fill', 'none');
+    el.setAttribute('stroke-width', shape.strokeWidth || 2);
+  }
+
+  return el;
+}
+
+function getShapeBounds(shape) {
+  if (shape.type === 'rectangle') {
+    const x = Math.min(shape.x, shape.x + shape.width);
+    const y = Math.min(shape.y, shape.y + shape.height);
+    const w = Math.abs(shape.width);
+    const h = Math.abs(shape.height);
+    return { x, y, width: w, height: h, cx: x + w/2, cy: y + h/2 };
+  } else if (shape.type === 'circle') {
+    const r = Math.abs(shape.r);
+    return { x: shape.cx - r, y: shape.cy - r, width: r*2, height: r*2, cx: shape.cx, cy: shape.cy };
+  } else if (shape.type === 'line') {
+    const x = Math.min(shape.x1, shape.x2);
+    const y = Math.min(shape.y1, shape.y2);
+    const w = Math.abs(shape.x2 - shape.x1);
+    const h = Math.abs(shape.y2 - shape.y1);
+    return { x, y, width: w, height: h, cx: (shape.x1 + shape.x2)/2, cy: (shape.y1 + shape.y2)/2 };
+  }
+  return null;
+}
+
+// ============================================
+// HISTORY (UNDO/REDO)
+// ============================================
+
+function saveState() {
+  // Remove any future states if we've undone
+  if (State.historyIndex < State.history.length - 1) {
+    State.history = State.history.slice(0, State.historyIndex + 1);
+  }
+
+  const snapshot = JSON.stringify({
+    shapes: State.shapes,
+    nextId: State.nextId
+  });
+
+  State.history.push(snapshot);
+  State.historyIndex = State.history.length - 1;
+
+  // Limit history to 50 steps
+  if (State.history.length > 50) {
+    State.history.shift();
+    State.historyIndex--;
+  }
+}
+
+function undo() {
+  if (State.historyIndex <= 0) return;
+  State.historyIndex--;
+  restoreState(State.history[State.historyIndex]);
+}
+
+function redo() {
+  if (State.historyIndex >= State.history.length - 1) return;
+  State.historyIndex++;
+  restoreState(State.history[State.historyIndex]);
+}
+
+function restoreState(snapshotStr) {
+  const snapshot = JSON.parse(snapshotStr);
+  State.shapes = snapshot.shapes;
+  State.nextId = snapshot.nextId;
+  State.selectedIds.clear();
+  updateSelection();
+  render();
+  updateProperties();
+}
+
+// ============================================
+// RENDERING
+// ============================================
+
+function render() {
+  const shapesGroup = document.getElementById('shapes-group');
+  shapesGroup.innerHTML = '';
+
+  State.shapes.forEach(shape => {
+    const el = shapeToSVGElement(shape);
+    shapesGroup.appendChild(el);
+  });
+
+  updateSelection();
+  updateStatusBar();
+  updateShapeCount();
+}
+
+function updateSelection() {
+  const selectionGroup = document.getElementById('selection-group');
+  selectionGroup.innerHTML = '';
+
+  // Update shape classes
+  document.querySelectorAll('.shape').forEach(el => {
+    const id = el.id;
+    if (State.selectedIds.has(id)) {
+      el.classList.add('selected');
+    } else {
+      el.classList.remove('selected');
+    }
+  });
+
+  // Draw resize handles for selected shapes
+  State.shapes.forEach(shape => {
+    if (!State.selectedIds.has(shape.id)) return;
+
+    const bounds = getShapeBounds(shape);
+    if (!bounds) return;
+
+    // Draw handles for rectangles and circles
+    if (shape.type === 'rectangle' || shape.type === 'circle') {
+      const handles = [
+        { name: 'nw', x: bounds.x, y: bounds.y },
+        { name: 'ne', x: bounds.x + bounds.width, y: bounds.y },
+        { name: 'sw', x: bounds.x, y: bounds.y + bounds.height },
+        { name: 'se', x: bounds.x + bounds.width, y: bounds.y + bounds.height }
+      ];
+
+      handles.forEach(handle => {
+        const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circle.setAttribute('cx', handle.x);
+        circle.setAttribute('cy', handle.y);
+        circle.setAttribute('r', 5);
+        circle.setAttribute('class', 'resize-handle');
+        circle.setAttribute('data-handle', handle.name);
+        circle.setAttribute('data-shape-id', shape.id);
+        selectionGroup.appendChild(circle);
+      });
+    }
+  });
+
+  // Update selection count
+  document.getElementById('selection-count').textContent = State.selectedIds.size + ' selected';
+}
+
+function updateStatusBar() {
+  const left = document.getElementById('status-left');
+  const right = document.getElementById('status-right');
+
+  if (State.isDrawing) {
+    left.textContent = 'Drawing... Click to place';
+  } else if (State.isDragging) {
+    left.textContent = 'Dragging shapes...';
+  } else if (State.isResizing) {
+    left.textContent = 'Resizing...';
+  } else if (State.isPanning) {
+    left.textContent = 'Panning...';
+  } else {
+    left.textContent = 'Ready';
+  }
+
+  right.textContent = `Grid: ${State.gridSize}px | Snap: ${State.snapEnabled ? 'On' : 'Off'}`;
+}
+
+function updateShapeCount() {
+  document.getElementById('shape-count').textContent = State.shapes.length + ' shapes';
+}
+
+// ============================================
+// VIEWPORT (PAN/ZOOM)
+// ============================================
+
+function updateViewport() {
+  const viewport = document.getElementById('viewport');
+  viewport.setAttribute('transform',
+    `translate(${State.viewState.panX}, ${State.viewState.panY}) scale(${State.viewState.zoom})`
+  );
+  document.getElementById('zoom-display').textContent = Math.round(State.viewState.zoom * 100) + '%';
+}
+
+function zoomAtPoint(delta, clientX, clientY) {
+  const svg = document.getElementById('cad-canvas');
+  const rect = svg.getBoundingClientRect();
+  const mouseX = clientX - rect.left;
+  const mouseY = clientY - rect.top;
+
+  const oldZoom = State.viewState.zoom;
+  const newZoom = clamp(oldZoom * (delta > 0 ? 0.9 : 1.1), 0.1, 10);
+
+  const zoomRatio = newZoom / oldZoom;
+
+  State.viewState.panX = mouseX - (mouseX - State.viewState.panX) * zoomRatio;
+  State.viewState.panY = mouseY - (mouseY - State.viewState.panY) * zoomRatio;
+  State.viewState.zoom = newZoom;
+
+  updateViewport();
+}
+
+function resetView() {
+  State.viewState = { panX: 0, panY: 0, zoom: 1 };
+  updateViewport();
+}
+
+// ============================================
+// SHAPE CREATION
+// ============================================
+
+function createShape(type, props) {
+  const shape = {
+    id: generateId(),
+    type,
+    ...props,
+    fill: props.fill || getDefaultFill(type),
+    stroke: props.stroke || getDefaultStroke(type),
+    strokeWidth: props.strokeWidth || 2
+  };
+  State.shapes.push(shape);
+  return shape;
+}
+
+function getDefaultFill(type) {
+  switch(type) {
+    case 'rectangle': return '#6c8cff';
+    case 'circle': return '#6cff9c';
+    case 'line': return '#ffc86c';
+    default: return '#6c8cff';
+  }
+}
+
+function getDefaultStroke(type) {
+  switch(type) {
+    case 'rectangle': return '#4a6aff';
+    case 'circle': return '#4aff6c';
+    case 'line': return '#e0a040';
+    default: return '#4a6aff';
+  }
+}
+
+function deleteShape(id) {
+  State.shapes = State.shapes.filter(s => s.id !== id);
+  State.selectedIds.delete(id);
+}
+
+function duplicateShape(shape) {
+  const newShape = JSON.parse(JSON.stringify(shape));
+  newShape.id = generateId();
+
+  if (shape.type === 'rectangle') {
+    newShape.x += 20;
+    newShape.y += 20;
+  } else if (shape.type === 'circle') {
+    newShape.cx += 20;
+    newShape.cy += 20;
+  } else if (shape.type === 'line') {
+    newShape.x1 += 20;
+    newShape.y1 += 20;
+    newShape.x2 += 20;
+    newShape.y2 += 20;
+  }
+
+  State.shapes.push(newShape);
+  State.selectedIds.clear();
+  State.selectedIds.add(newShape.id);
+  saveState();
+  render();
+  updateProperties();
+}
+
+// ============================================
+// SELECTION
+// ============================================
+
+function hitTest(x, y) {
+  // Check in reverse order (top-most first)
+  for (let i = State.shapes.length - 1; i >= 0; i--) {
+    const shape = State.shapes[i];
+    const bounds = getShapeBounds(shape);
+    if (!bounds) continue;
+
+    if (shape.type === 'rectangle') {
+      if (x >= bounds.x && x <= bounds.x + bounds.width &&
+          y >= bounds.y && y <= bounds.y + bounds.height) {
+        return shape;
+      }
+    } else if (shape.type === 'circle') {
+      const dx = x - shape.cx;
+      const dy = y - shape.cy;
+      if (dx*dx + dy*dy <= Math.abs(shape.r) * Math.abs(shape.r)) {
+        return shape;
+      }
+    } else if (shape.type === 'line') {
+      const dist = pointToLineDistance(x, y, shape.x1, shape.y1, shape.x2, shape.y2);
+      if (dist < 5 / State.viewState.zoom) {
+        return shape;
+      }
+    }
+  }
+  return null;
+}
+
+function pointToLineDistance(px, py, x1, y1, x2, y2) {
+  const A = px - x1;
+  const B = py - y1;
+  const C = x2 - x1;
+  const D = y2 - y1;
+
+  const dot = A * C + B * D;
+  const lenSq = C * C + D * D;
+  let param = lenSq !== 0 ? dot / lenSq : -1;
+
+  let xx, yy;
+
+  if (param < 0) {
+    xx = x1;
+    yy = y1;
+  } else if (param > 1) {
+    xx = x2;
+    yy = y2;
+  } else {
+    xx = x1 + param * C;
+    yy = y1 + param * D;
+  }
+
+  const dx = px - xx;
+  const dy = py - yy;
+  return Math.sqrt(dx * dx + dy * dy);
+}
+
+function hitTestResizeHandle(x, y) {
+  for (const shape of State.shapes) {
+    if (!State.selectedIds.has(shape.id)) continue;
+
+    const bounds = getShapeBounds(shape);
+    if (!bounds) continue;
+
+    const handles = [
+      { name: 'nw', x: bounds.x, y: bounds.y },
+      { name: 'ne', x: bounds.x + bounds.width, y: bounds.y },
+      { name: 'sw', x: bounds.x, y: bounds.y + bounds.height },
+      { name: 'se', x: bounds.x + bounds.width, y: bounds.y + bounds.height }
+    ];
+
+    for (const handle of handles) {
+      const dist = Math.sqrt((x - handle.x)**2 + (y - handle.y)**2);
+      if (dist < 8 / State.viewState.zoom) {
+        return { handle: handle.name, shape };
+      }
+    }
+  }
+  return null;
+}
+
+// ============================================
+// PROPERTIES PANEL
+// ============================================
+
+function updateProperties() {
+  const content = document.getElementById('properties-content');
+
+  if (State.selectedIds.size === 0) {
+    content.innerHTML = `
+      <div class="no-selection">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z"/>
+        </svg>
+        <p>Select shapes to edit their properties</p>
+        <p style="margin-top: 8px; font-size: 11px;">Use V to switch to select tool</p>
+      </div>
+    `;
+    return;
+  }
+
+  if (State.selectedIds.size === 1) {
+    const id = Array.from(State.selectedIds)[0];
+    const shape = State.shapes.find(s => s.id === id);
+    if (!shape) return;
+
+    let html = `
+      <div class="panel-section">
+        <div class="panel-section-title">Shape</div>
+        <div class="property-row">
+          <span class="property-label">Type</span>
+          <span class="property-input" style="cursor: default;">${shape.type.charAt(0).toUpperCase() + shape.type.slice(1)}</span>
+        </div>
+        <div class="property-row">
+          <span class="property-label">ID</span>
+          <span class="property-input" style="cursor: default; font-family: monospace;">${shape.id}</span>
+        </div>
+      </div>
+    `;
+
+    if (shape.type === 'rectangle') {
+      html += `
+        <div class="panel-section">
+          <div class="panel-section-title">Position & Size</div>
+          <div class="property-row">
+            <span class="property-label">X</span>
+            <input type="number" class="property-input" id="prop-x" value="${Math.round(shape.x)}" step="1">
+          </div>
+          <div class="property-row">
+            <span class="property-label">Y</span>
+            <input type="number" class="property-input" id="prop-y" value="${Math.round(shape.y)}" step="1">
+          </div>
+          <div class="property-row">
+            <span class="property-label">Width</span>
+            <input type="number" class="property-input" id="prop-width" value="${Math.abs(Math.round(shape.width))}" step="1" min="1">
+          </div>
+          <div class="property-row">
+            <span class="property-label">Height</span>
+            <input type="number" class="property-input" id="prop-height" value="${Math.abs(Math.round(shape.height))}" step="1" min="1">
+          </div>
+        </div>
+      `;
+    } else if (shape.type === 'circle') {
+      html += `
+        <div class="panel-section">
+          <div class="panel-section-title">Position & Size</div>
+          <div class="property-row">
+            <span class="property-label">CX</span>
+            <input type="number" class="property-input" id="prop-cx" value="${Math.round(shape.cx)}" step="1">
+          </div>
+          <div class="property-row">
+            <span class="property-label">CY</span>
+            <input type="number" class="property-input" id="prop-cy" value="${Math.round(shape.cy)}" step="1">
+          </div>
+          <div class="property-row">
+            <span class="property-label">Radius</span>
+            <input type="number" class="property-input" id="prop-r" value="${Math.abs(Math.round(shape.r))}" step="1" min="1">
+          </div>
+        </div>
+      `;
+    } else if (shape.type === 'line') {
+      html += `
+        <div class="panel-section">
+          <div class="panel-section-title">Line Endpoints</div>
+          <div class="property-row">
+            <span class="property-label">X1</span>
+            <input type="number" class="property-input" id="prop-x1" value="${Math.round(shape.x1)}" step="1">
+          </div>
+          <div class="property-row">
+            <span class="property-label">Y1</span>
+            <input type="number" class="property-input" id="prop-y1" value="${Math.round(shape.y1)}" step="1">
+          </div>
+          <div class="property-row">
+            <span class="property-label">X2</span>
+            <input type="number" class="property-input" id="prop-x2" value="${Math.round(shape.x2)}" step="1">
+          </div>
+          <div class="property-row">
+            <span class="property-label">Y2</span>
+            <input type="number" class="property-input" id="prop-y2" value="${Math.round(shape.y2)}" step="1">
+          </div>
+        </div>
+      `;
+    }
+
+    html += `
+      <div class="panel-section">
+        <div class="panel-section-title">Appearance</div>
+        <div class="property-row">
+          <span class="property-label">Fill</span>
+          <input type="color" class="color-input" id="prop-fill" value="${shape.fill}">
+          <input type="text" class="property-input" id="prop-fill-text" value="${shape.fill}" style="margin-left: 8px;">
+        </div>
+        <div class="property-row">
+          <span class="property-label">Stroke</span>
+          <input type="color" class="color-input" id="prop-stroke" value="${shape.stroke}">
+          <input type="text" class="property-input" id="prop-stroke-text" value="${shape.stroke}" style="margin-left: 8px;">
+        </div>
+        <div class="property-row">
+          <span class="property-label">Stroke W</span>
+          <input type="number" class="property-input" id="prop-stroke-width" value="${shape.strokeWidth}" step="0.5" min="0">
+        </div>
+      </div>
+    `;
+
+    content.innerHTML = html;
+
+    // Add event listeners
+    const addPropListener = (id, key, transform) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.addEventListener('input', () => {
+          if (State.selectedIds.size !== 1) return;
+          const shape = State.shapes.find(s => s.id === id);
+          if (!shape) return;
+          shape[key] = transform ? transform(el.value) : parseFloat(el.value);
+          render();
+        });
+      }
+    };
+
+    if (shape.type === 'rectangle') {
+      document.getElementById('prop-x')?.addEventListener('input', (e) => {
+        const shape = State.shapes.find(s => s.id === id);
+        if (shape) { shape.x = parseFloat(e.target.value) || 0; render(); }
+      });
+      document.getElementById('prop-y')?.addEventListener('input', (e) => {
+        const shape = State.shapes.find(s => s.id === id);
+        if (shape) { shape.y = parseFloat(e.target.value) || 0; render(); }
+      });
+      document.getElementById('prop-width')?.addEventListener('input', (e) => {
+        const shape = State.shapes.find(s => s.id === id);
+        if (shape) { shape.width = shape.width < 0 ? -parseFloat(e.target.value) : parseFloat(e.target.value); render(); }
+      });
+      document.getElementById('prop-height')?.addEventListener('input', (e) => {
+        const shape = State.shapes.find(s => s.id === id);
+        if (shape) { shape.height = shape.height < 0 ? -parseFloat(e.target.value) : parseFloat(e.target.value); render(); }
+      });
+    } else if (shape.type === 'circle') {
+      document.getElementById('prop-cx')?.addEventListener('input', (e) => {
+        const shape = State.shapes.find(s => s.id === id);
+        if (shape) { shape.cx = parseFloat(e.target.value) || 0; render(); }
+      });
+      document.getElementById('prop-cy')?.addEventListener('input', (e) => {
+        const shape = State.shapes.find(s => s.id === id);
+        if (shape) { shape.cy = parseFloat(e.target.value) || 0; render(); }
+      });
+      document.getElementById('prop-r')?.addEventListener('input', (e) => {
+        const shape = State.shapes.find(s => s.id === id);
+        if (shape) { shape.r = shape.r < 0 ? -parseFloat(e.target.value) : parseFloat(e.target.value); render(); }
+      });
+    } else if (shape.type === 'line') {
+      ['x1', 'y1', 'x2', 'y2'].forEach(key => {
+        document.getElementById('prop-' + key)?.addEventListener('input', (e) => {
+          const shape = State.shapes.find(s => s.id === id);
+          if (shape) { shape[key] = parseFloat(e.target.value) || 0; render(); }
+        });
+      });
+    }
+
+    document.getElementById('prop-fill')?.addEventListener('input', (e) => {
+      const shape = State.shapes.find(s => s.id === id);
+      if (shape) { shape.fill = e.target.value; document.getElementById('prop-fill-text').value = e.target.value; render(); }
+    });
+    document.getElementById('prop-fill-text')?.addEventListener('change', (e) => {
+      const shape = State.shapes.find(s => s.id === id);
+      if (shape) { shape.fill = e.target.value; document.getElementById('prop-fill').value = e.target.value; render(); }
+    });
+    document.getElementById('prop-stroke')?.addEventListener('input', (e) => {
+      const shape = State.shapes.find(s => s.id === id);
+      if (shape) { shape.stroke = e.target.value; document.getElementById('prop-stroke-text').value = e.target.value; render(); }
+    });
+    document.getElementById('prop-stroke-text')?.addEventListener('change', (e) => {
+      const shape = State.shapes.find(s => s.id === id);
+      if (shape) { shape.stroke = e.target.value; document.getElementById('prop-stroke').value = e.target.value; render(); }
+    });
+    document.getElementById('prop-stroke-width')?.addEventListener('input', (e) => {
+      const shape = State.shapes.find(s => s.id === id);
+      if (shape) { shape.strokeWidth = parseFloat(e.target.value) || 0; render(); }
+    });
+
+  } else {
+    // Multiple selection
+    content.innerHTML = `
+      <div class="panel-section">
+        <div class="panel-section-title">Multiple Selection</div>
+        <p style="font-size: 12px; color: var(--text-secondary);">
+          ${State.selectedIds.size} shapes selected.<br>
+          Select a single shape to edit properties.
+        </p>
+      </div>
+      <div class="panel-section">
+        <div class="panel-section-title">Actions</div>
+        <button class="tool-btn" style="width: 100%; justify-content: center; margin-bottom: 8px;" id="btn-duplicate-multi">
+          Duplicate All
+        </button>
+        <button class="tool-btn danger" style="width: 100%; justify-content: center;" id="btn-delete-multi">
+          Delete All
+        </button>
+      </div>
+    `;
+
+    document.getElementById('btn-duplicate-multi')?.addEventListener('click', () => {
+      const selectedShapes = State.shapes.filter(s => State.selectedIds.has(s.id));
+      selectedShapes.forEach(shape => duplicateShape(shape));
+    });
+
+    document.getElementById('btn-delete-multi')?.addEventListener('click', () => {
+      State.shapes = State.shapes.filter(s => !State.selectedIds.has(s.id));
+      State.selectedIds.clear();
+      saveState();
+      render();
+      updateProperties();
+    });
+  }
+}
+
+// ============================================
+// EXPORT/IMPORT SVG
+// ============================================
+
+function exportSVG() {
+  const svgElement = document.getElementById('cad-canvas');
+  const svgClone = svgElement.cloneNode(true);
+
+  // Clean up for export
+  svgClone.removeAttribute('id');
+  svgClone.classList.remove('tool-select');
+
+  // Remove temp and selection groups
+  const tempGroup = svgClone.querySelector('#temp-group');
+  const selectionGroup = svgClone.querySelector('#selection-group');
+  if (tempGroup) tempGroup.remove();
+  if (selectionGroup) selectionGroup.remove();
+
+  // Remove resize handles
+  svgClone.querySelectorAll('.resize-handle').forEach(el => el.remove());
+
+  // Set proper viewBox
+  const bounds = getCanvasBounds();
+  if (bounds) {
+    svgClone.setAttribute('viewBox', `${bounds.x} ${bounds.y} ${bounds.width} ${bounds.height}`);
+  }
+
+  // Ensure shapes have proper attributes
+  svgClone.querySelectorAll('.shape').forEach(el => {
+    el.removeAttribute('class');
+    el.setAttribute('stroke-width', el.getAttribute('stroke-width') || 2);
+  });
+
+  const serializer = new XMLSerializer();
+  let svgString = serializer.serializeToString(svgClone);
+
+  // Pretty print
+  svgString = svgString.replace(/></g, '>\n<');
+
+  document.getElementById('modal-title').textContent = 'Export SVG';
+  document.getElementById('modal-textarea').value = svgString;
+  document.getElementById('modal-textarea').removeAttribute('readonly');
+  document.getElementById('modal-overlay').classList.add('visible');
+}
+
+function getCanvasBounds() {
+  if (State.shapes.length === 0) {
+    return { x: -500, y: -500, width: 1000, height: 1000 };
+  }
+
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+
+  State.shapes.forEach(shape => {
+    const bounds = getShapeBounds(shape);
+    if (!bounds) return;
+    minX = Math.min(minX, bounds.x);
+    minY = Math.min(minY, bounds.y);
+    maxX = Math.max(maxX, bounds.x + bounds.width);
+    maxY = Math.max(maxY, bounds.y + bounds.height);
+  });
+
+  const padding = 20;
+  return {
+    x: minX - padding,
+    y: minY - padding,
+    width: (maxX - minX) + padding * 2,
+    height: (maxY - minY) + padding * 2
+  };
+}
+
+function importSVG() {
+  document.getElementById('modal-title').textContent = 'Import SVG';
+  document.getElementById('modal-textarea').value = '';
+  document.getElementById('modal-textarea').setAttribute('readonly', false);
+  document.getElementById('modal-textarea').placeholder = 'Paste SVG content here...';
+  document.getElementById('modal-overlay').classList.add('visible');
+}
+
+function parseSVGContent(svgString) {
+  try {
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(svgString, 'image/svg+xml');
+    const shapes = doc.querySelectorAll('rect, circle, line');
+
+    shapes.forEach(el => {
+      let shape = null;
+
+      if (el.tagName === 'rect') {
+        shape = createShape('rectangle', {
+          x: parseFloat(el.getAttribute('x')) || 0,
+          y: parseFloat(el.getAttribute('y')) || 0,
+          width: parseFloat(el.getAttribute('width')) || 0,
+          height: parseFloat(el.getAttribute('height')) || 0,
+          fill: el.getAttribute('fill') || '#6c8cff',
+          stroke: el.getAttribute('stroke') || '#4a6aff',
+          strokeWidth: parseFloat(el.getAttribute('stroke-width')) || 2
+        });
+      } else if (el.tagName === 'circle') {
+        shape = createShape('circle', {
+          cx: parseFloat(el.getAttribute('cx')) || 0,
+          cy: parseFloat(el.getAttribute('cy')) || 0,
+          r: parseFloat(el.getAttribute('r')) || 0,
+          fill: el.getAttribute('fill') || '#6cff9c',
+          stroke: el.getAttribute('stroke') || '#4aff6c',
+          strokeWidth: parseFloat(el.getAttribute('stroke-width')) || 2
+        });
+      } else if (el.tagName === 'line') {
+        shape = createShape('line', {
+          x1: parseFloat(el.getAttribute('x1')) || 0,
+          y1: parseFloat(el.getAttribute('y1')) || 0,
+          x2: parseFloat(el.getAttribute('x2')) || 0,
+          y2: parseFloat(el.getAttribute('y2')) || 0,
+          stroke: el.getAttribute('stroke') || '#ffc86c',
+          strokeWidth: parseFloat(el.getAttribute('stroke-width')) || 2
+        });
+      }
+
+      if (shape) {
+        State.selectedIds.add(shape.id);
+      }
+    });
+
+    saveState();
+    render();
+    updateProperties();
+  } catch (e) {
+    alert('Error parsing SVG: ' + e.message);
+  }
+}
+
+// ============================================
+// EVENT HANDLERS
+// ============================================
+
+const svg = document.getElementById('cad-canvas');
+
+svg.addEventListener('mousedown', (e) => {
+  const rect = svg.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+  const svgPoint = screenToSvg(e.clientX, e.clientY);
+  const snappedX = snapToGrid(svgPoint.x);
+  const snappedY = snapToGrid(svgPoint.y);
+
+  // Middle mouse button or Space+Click for panning
+  if (e.button === 1 || (e.button === 0 && e.altKey)) {
+    State.isPanning = true;
+    State.panStart = { x: e.clientX, y: e.clientY };
+    State.panStartView = { panX: State.viewState.panX, panY: State.viewState.panY };
+    svg.style.cursor = 'grabbing';
+    e.preventDefault();
+    return;
+  }
+
+  if (e.button !== 0) return;
+
+  // Handle tool-specific behavior
+  if (State.currentTool === 'select') {
+    // Check for resize handle hit first
+    const handleHit = hitTestResizeHandle(svgPoint.x, svgPoint.y);
+
+    if (handleHit) {
+      State.isResizing = true;
+      State.resizeHandle = handleHit.handle;
+      State.resizeStartBounds = getShapeBounds(handleHit.shape);
+      State.dragStart = { x: svgPoint.x, y: svgPoint.y };
+      return;
+    }
+
+    // Hit test for shapes
+    const hitShape = hitTest(svgPoint.x, svgPoint.y);
+
+    if (hitShape) {
+      if (e.shiftKey) {
+        // Toggle selection
+        if (State.selectedIds.has(hitShape.id)) {
+          State.selectedIds.delete(hitShape.id);
+        } else {
+          State.selectedIds.add(hitShape.id);
+        }
+      } else if (!State.selectedIds.has(hitShape.id)) {
+        // New selection (clear others)
+        State.selectedIds.clear();
+        State.selectedIds.add(hitShape.id);
+      }
+
+      // Start dragging
+      State.isDragging = true;
+      State.dragStart = { x: svgPoint.x, y: svgPoint.y };
+
+      // Store original positions for all selected shapes
+      State.shapes.forEach(shape => {
+        if (State.selectedIds.has(shape.id)) {
+          shape._dragStartX = shape.x || shape.cx || shape.x1;
+          shape._dragStartY = shape.y || shape.cy || shape.y1;
+        }
+      });
+
+      render();
+      updateProperties();
+    } else {
+      // Click on empty space - clear selection unless shift is held
+      if (!e.shiftKey) {
+        State.selectedIds.clear();
+        render();
+        updateProperties();
+      }
+    }
+  } else {
+    // Drawing tools
+    State.isDrawing = true;
+    State.dragStart = { x: snappedX, y: snappedY };
+
+    if (State.currentTool === 'rectangle') {
+      State.tempShape = createShape('rectangle', {
+        x: snappedX, y: snappedY, width: 0, height: 0
+      });
+    } else if (State.currentTool === 'circle') {
+      State.tempShape = createShape('circle', {
+        cx: snappedX, cy: snappedY, r: 0
+      });
+    } else if (State.currentTool === 'line') {
+      State.tempShape = createShape('line', {
+        x1: snappedX, y1: snappedY, x2: snappedX, y2: snappedY
+      });
+    }
+
+    renderTempShape();
+  }
+});
+
+svg.addEventListener('mousemove', (e) => {
+  const rect = svg.getBoundingClientRect();
+  const svgPoint = screenToSvg(e.clientX, e.clientY);
+  const snappedX = snapToGrid(svgPoint.x);
+  const snappedY = snapToGrid(svgPoint.y);
+
+  // Update cursor position display
+  document.getElementById('cursor-pos').textContent = `${Math.round(svgPoint.x)}, ${Math.round(svgPoint.y)}`;
+
+  // Panning
+  if (State.isPanning) {
+    const dx = e.clientX - State.panStart.x;
+    const dy = e.clientY - State.panStart.y;
+    State.viewState.panX = State.panStartView.panX + dx;
+    State.viewState.panY = State.panStartView.panY + dy;
+    updateViewport();
+    return;
+  }
+
+  // Drawing
+  if (State.isDrawing && State.tempShape) {
+    if (State.currentTool === 'rectangle') {
+      const w = snappedX - State.dragStart.x;
+      const h = snappedY - State.dragStart.y;
+      State.tempShape.width = w;
+      State.tempShape.height = h;
+    } else if (State.currentTool === 'circle') {
+      const dx = snappedX - State.dragStart.x;
+      const dy = snappedY - State.dragStart.y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      State.tempShape.r = dist;
+    } else if (State.currentTool === 'line') {
+      State.tempShape.x2 = snappedX;
+      State.tempShape.y2 = snappedY;
+    }
+
+    renderTempShape();
+    return;
+  }
+
+  // Dragging
+  if (State.isDragging) {
+    const dx = snappedX - State.dragStart.x;
+    const dy = snappedY - State.dragStart.y;
+
+    State.shapes.forEach(shape => {
+      if (!State.selectedIds.has(shape.id)) return;
+
+      if (shape.type === 'rectangle') {
+        shape.x = shape._dragStartX + dx;
+        shape.y = shape._dragStartY + dy;
+      } else if (shape.type === 'circle') {
+        shape.cx = shape._dragStartX + dx;
+        shape.cy = shape._dragStartY + dy;
+      } else if (shape.type === 'line') {
+        shape.x1 = shape._dragStartX + dx;
+        shape.y1 = shape._dragStartY + dy;
+        shape.x2 = shape._dragStartX + dx + (shape.x2 - shape._dragStartX);
+        shape.y2 = shape._dragStartY + dy + (shape.y2 - shape._dragStartY);
+      }
+    });
+
+    State.dragStart = { x: snappedX, y: snappedY };
+    render();
+    updateProperties();
+    return;
+  }
+
+  // Resizing
+  if (State.isResizing && State.tempShape) {
+    const dx = snappedX - State.dragStart.x;
+    const dy = snappedY - State.dragStart.y;
+
+    const shape = State.shapes.find(s => s.id === State.tempShape.id);
+    if (!shape) return;
+
+    const bounds = State.resizeStartBounds;
+    const handle = State.resizeHandle;
+
+    if (shape.type === 'rectangle') {
+      if (handle === 'se') {
+        shape.width = bounds.width + dx;
+        shape.height = bounds.height + dy;
+      } else if (handle === 'sw') {
+        shape.x = bounds.x + dx;
+        shape.width = bounds.width - dx;
+        shape.height = bounds.height + dy;
+      } else if (handle === 'ne') {
+        shape.y = bounds.y + dy;
+        shape.width = bounds.width + dx;
+        shape.height = bounds.height - dy;
+      } else if (handle === 'nw') {
+        shape.x = bounds.x + dx;
+        shape.y = bounds.y + dy;
+        shape.width = bounds.width - dx;
+        shape.height = bounds.height - dy;
+      }
+
+      // Normalize negative dimensions
+      if (shape.width < 0) { shape.x += shape.width; shape.width = -shape.width; }
+      if (shape.height < 0) { shape.y += shape.height; shape.height = -shape.height; }
+    }
+
+    render();
+    updateProperties();
+    return;
+  }
+});
+
+svg.addEventListener('mouseup', (e) => {
+  const svgPoint = screenToSvg(e.clientX, e.clientY);
+
+  // End panning
+  if (State.isPanning) {
+    State.isPanning = false;
+    svg.style.cursor = State.currentTool === 'select' ? 'default' : 'crosshair';
+    return;
+  }
+
+  // End drawing
+  if (State.isDrawing && State.tempShape) {
+    State.isDrawing = false;
+
+    // Remove temp shape
+    State.shapes = State.shapes.filter(s => s.id !== State.tempShape.id);
+
+    // Create final shape if it has valid dimensions
+    let shouldCreate = false;
+    if (State.currentTool === 'rectangle' && (Math.abs(State.tempShape.width) > 5 || Math.abs(State.tempShape.height) > 5)) {
+      shouldCreate = true;
+    } else if (State.currentTool === 'circle' && State.tempShape.r > 5) {
+      shouldCreate = true;
+    } else if (State.currentTool === 'line') {
+      const dx = State.tempShape.x2 - State.tempShape.x1;
+      const dy = State.tempShape.y2 - State.tempShape.y1;
+      if (Math.sqrt(dx*dx + dy*dy) > 5) {
+        shouldCreate = true;
+      }
+    }
+
+    if (shouldCreate) {
+      const finalShape = { ...State.tempShape };
+      const newShape = createShape(State.currentTool, finalShape);
+      State.selectedIds.clear();
+      State.selectedIds.add(newShape.id);
+      saveState();
+      render();
+      updateProperties();
+    }
+
+    State.tempShape = null;
+    renderTempShape();
+    return;
+  }
+
+  // End dragging
+  if (State.isDragging) {
+    State.isDragging = false;
+    saveState();
+    updateProperties();
+    return;
+  }
+
+  // End resizing
+  if (State.isResizing) {
+    State.isResizing = false;
+    saveState();
+    updateProperties();
+    return;
+  }
+});
+
+svg.addEventListener('dblclick', (e) => {
+  const svgPoint = screenToSvg(e.clientX, e.clientY);
+  const hitShape = hitTest(svgPoint.x, svgPoint.y);
+
+  if (hitShape) {
+    duplicateShape(hitShape);
+  }
+});
+
+svg.addEventListener('wheel', (e) => {
+  e.preventDefault();
+  zoomAtPoint(e.deltaY > 0 ? 1 : -1, e.clientX, e.clientY);
+}, { passive: false });
+
+// Right-click context menu
+svg.addEventListener('contextmenu', (e) => {
+  e.preventDefault();
+
+  const svgPoint = screenToSvg(e.clientX, e.clientY);
+  const hitShape = hitTest(svgPoint.x, svgPoint.y);
+
+  if (hitShape && !State.selectedIds.has(hitShape.id)) {
+    State.selectedIds.clear();
+    State.selectedIds.add(hitShape.id);
+    render();
+    updateProperties();
+  }
+
+  const menu = document.getElementById('context-menu');
+  menu.style.left = e.clientX + 'px';
+  menu.style.top = e.clientY + 'px';
+  menu.classList.add('visible');
+});
+
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.context-menu')) {
+    document.getElementById('context-menu').classList.remove('visible');
+  }
+});
+
+// Context menu actions
+document.getElementById('ctx-copy')?.addEventListener('click', () => {
+  State.clipboard = State.shapes.filter(s => State.selectedIds.has(s.id));
+  document.getElementById('context-menu').classList.remove('visible');
+});
+
+document.getElementById('ctx-paste')?.addEventListener('click', () => {
+  if (State.clipboard.length === 0) return;
+  State.clipboard.forEach(shape => {
+    const newShape = JSON.parse(JSON.stringify(shape));
+    newShape.id = generateId();
+
+    if (shape.type === 'rectangle') {
+      newShape.x += 20;
+      newShape.y += 20;
+    } else if (shape.type === 'circle') {
+      newShape.cx += 20;
+      newShape.cy += 20;
+    } else if (shape.type === 'line') {
+      newShape.x1 += 20;
+      newShape.y1 += 20;
+      newShape.x2 += 20;
+      newShape.y2 += 20;
+    }
+
+    State.shapes.push(newShape);
+    State.selectedIds.add(newShape.id);
+  });
+  saveState();
+  render();
+  updateProperties();
+  document.getElementById('context-menu').classList.remove('visible');
+});
+
+document.getElementById('ctx-delete')?.addEventListener('click', () => {
+  State.shapes = State.shapes.filter(s => !State.selectedIds.has(s.id));
+  State.selectedIds.clear();
+  saveState();
+  render();
+  updateProperties();
+  document.getElementById('context-menu').classList.remove('visible');
+});
+
+// ============================================
+// TOOL SWITCHING
+// ============================================
+
+function setTool(tool) {
+  State.currentTool = tool;
+
+  // Update button states
+  document.querySelectorAll('.tool-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+
+  const toolBtn = document.getElementById('tool-' + tool);
+  if (toolBtn) toolBtn.classList.add('active');
+
+  // Update cursor
+  svg.className.baseVal = 'tool-' + tool;
+
+  // Cancel any drawing
+  if (State.isDrawing) {
+    State.isDrawing = false;
+    State.tempShape = null;
+    renderTempShape();
+  }
+}
+
+document.getElementById('tool-select')?.addEventListener('click', () => setTool('select'));
+document.getElementById('tool-rectangle')?.addEventListener('click', () => setTool('rectangle'));
+document.getElementById('tool-circle')?.addEventListener('click', () => setTool('circle'));
+document.getElementById('tool-line')?.addEventListener('click', () => setTool('line'));
+
+// ============================================
+// TOOLBAR ACTIONS
+// ============================================
+
+document.getElementById('btn-undo')?.addEventListener('click', undo);
+document.getElementById('btn-redo')?.addEventListener('click', redo);
+
+document.getElementById('btn-delete')?.addEventListener('click', () => {
+  State.shapes = State.shapes.filter(s => !State.selectedIds.has(s.id));
+  State.selectedIds.clear();
+  saveState();
+  render();
+  updateProperties();
+});
+
+document.getElementById('btn-clear')?.addEventListener('click', () => {
+  if (State.shapes.length === 0) return;
+  if (confirm('Clear all shapes?')) {
+    State.shapes = [];
+    State.selectedIds.clear();
+    saveState();
+    render();
+    updateProperties();
+  }
+});
+
+document.getElementById('btn-export')?.addEventListener('click', exportSVG);
+document.getElementById('btn-import')?.addEventListener('click', importSVG);
+
+document.getElementById('btn-grid')?.addEventListener('click', () => {
+  State.gridEnabled = !State.gridEnabled;
+  document.getElementById('grid-rect').style.display = State.gridEnabled ? 'block' : 'none';
+  document.getElementById('btn-grid').classList.toggle('active', State.gridEnabled);
+  updateStatusBar();
+});
+
+document.getElementById('btn-snap')?.addEventListener('click', () => {
+  State.snapEnabled = !State.snapEnabled;
+  document.getElementById('btn-snap').classList.toggle('active', State.snapEnabled);
+  updateStatusBar();
+});
+
+// Zoom controls
+document.getElementById('zoom-in')?.addEventListener('click', () => {
+  const rect = svg.getBoundingClientRect();
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+  zoomAtPoint(-1, rect.left + centerX, rect.top + centerY);
+});
+
+document.getElementById('zoom-out')?.addEventListener('click', () => {
+  const rect = svg.getBoundingClientRect();
+  const centerX = rect.width / 2;
+  const centerY = rect.height / 2;
+  zoomAtPoint(1, rect.left + centerX, rect.top + centerY);
+});
+
+document.getElementById('zoom-reset')?.addEventListener('click', resetView);
+
+// Modal actions
+document.getElementById('modal-close')?.addEventListener('click', () => {
+  document.getElementById('modal-overlay').classList.remove('visible');
+});
+
+document.getElementById('modal-overlay')?.addEventListener('click', (e) => {
+  if (e.target === document.getElementById('modal-overlay')) {
+    document.getElementById('modal-overlay').classList.remove('visible');
+  }
+});
+
+document.getElementById('modal-copy')?.addEventListener('click', () => {
+  const textarea = document.getElementById('modal-textarea');
+  navigator.clipboard.writeText(textarea.value).then(() => {
+    alert('Copied to clipboard!');
+  });
+});
+
+document.getElementById('modal-download')?.addEventListener('click', () => {
+  const svgString = document.getElementById('modal-textarea').value;
+  const blob = new Blob([svgString], { type: 'image/svg+xml' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'cad-export.svg';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+});
+
+// File input for import
+document.getElementById('file-input')?.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = (event) => {
+    parseSVGContent(event.target.result);
+    document.getElementById('modal-overlay').classList.remove('visible');
+  };
+  reader.readAsText(file);
+  e.target.value = '';
+});
+
+// Temp shape rendering
+function renderTempShape() {
+  const tempGroup = document.getElementById('temp-group');
+  tempGroup.innerHTML = '';
+
+  if (State.tempShape) {
+    const el = shapeToSVGElement(State.tempShape);
+    el.classList.add('temp-shape');
+    el.removeAttribute('id');
+    tempGroup.appendChild(el);
+  }
+}
+
+// ============================================
+// KEYBOARD SHORTCUTS
+// ============================================
+
+document.addEventListener('keydown', (e) => {
+  // Don't handle shortcuts when typing in inputs
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+
+  switch(e.key.toLowerCase()) {
+    case 'v':
+      setTool('select');
+      break;
+    case 'r':
+      setTool('rectangle');
+      break;
+    case 'c':
+      setTool('circle');
+      break;
+    case 'l':
+      setTool('line');
+      break;
+    case 'g':
+      State.gridEnabled = !State.gridEnabled;
+      document.getElementById('grid-rect').style.display = State.gridEnabled ? 'block' : 'none';
+      document.getElementById('btn-grid').classList.toggle('active', State.gridEnabled);
+      updateStatusBar();
+      break;
+    case 's':
+      State.snapEnabled = !State.snapEnabled;
+      document.getElementById('btn-snap').classList.toggle('active', State.snapEnabled);
+      updateStatusBar();
+      break;
+    case 'delete':
+    case 'backspace':
+      if (State.selectedIds.size > 0) {
+        State.shapes = State.shapes.filter(s => !State.selectedIds.has(s.id));
+        State.selectedIds.clear();
+        saveState();
+        render();
+        updateProperties();
+      }
+      break;
+    case 'a':
+      if (e.ctrlKey || e.metaKey) {
+        e.preventDefault();
+        State.shapes.forEach(s => State.selectedIds.add(s.id));
+        render();
+        updateProperties();
+      }
+      break;
+    case 'z':
+      if (e.ctrlKey || e.metaKey) {
+        if (e.shiftKey) {
+          redo();
+        } else {
+          undo();
+        }
+      }
+      break;
+    case 'escape':
+      State.selectedIds.clear();
+      State.isDrawing = false;
+      State.tempShape = null;
+      renderTempShape();
+      render();
+      updateProperties();
+      break;
+    case 'y':
+      if (e.ctrlKey || e.metaKey) {
+        redo();
+      }
+      break;
+  }
+});
+
+// ============================================
+// INITIALIZATION
+// ============================================
+
+function init() {
+  // Activate grid button by default
+  document.getElementById('grid').classList.add('active');
+
+  // Initial render
+  updateViewport();
+  render();
+  updateProperties();
+
+  // Save initial state
+  saveState();
+
+  console.log('Browser CAD initialized');
+}
+
+init();
 </script>
 </body>
 </html>
